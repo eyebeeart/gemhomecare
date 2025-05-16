@@ -291,6 +291,7 @@ body {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
 .image-content img {
     width: 534px;
     height: 439px;
@@ -565,9 +566,8 @@ body {
   
   @media (max-width: 600px) {
     nav .nav-menu {
-      display: none;
       flex-direction: column;
-      background: #fff;
+      background: #00000020;
       position: absolute;
       top: 83px;
       right: 0;
@@ -577,19 +577,26 @@ body {
       z-index: 999;
       text-align: left;
       height: 80vh;
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(20px);
+      transform: translateX(250px);
+      transition: transform 0.5s ease-out;
     }
   
     nav .nav-menu.show {
-      display: flex;
+      transform: translateX(0px);
     }
 
     .nav-menu li {
       padding: 10px 20px;
-      border-bottom: 0.2px solid #00000020;
+      border-bottom: 0.2px solid #0000006a;
       text-align: left;
       font-size: 16px;
-      color: #ffffff;
+      cursor: pointer;
     }
+  .nav-menu a{
+    color: white;
+  }
   
     #menu-toggle {
       display: block;

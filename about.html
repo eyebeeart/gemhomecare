@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
-    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="About.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -34,21 +34,21 @@
     <i class="fa-solid fa-xmark" id="close-toggle"></i>
     </nav>
 
-  <section class="care-section">
+  <div class="care-section">
     <h1>ABOUT US</h1>
         <div class="uline">
             <hr class="hr3">
         </div>
     
         <div class="care-section2">
-          <div class="text-content">
-            <h2>GEM focuses on providing<br>A quality and accessible<br>Digitalized healthcare<br>Cervices with a <br>Confidential health plan<br>That centered on our <br>Clients.</h2>    
+          <div class="text-content content2">
+            <h2>GEM focuses on providing<br>A quality and accessible<br>Digitalized healthcare<br>Services with a <br>Confidential health plan<br>That centered on our <br>Clients.</h2>    
           </div>
-          <div class="image-content">
+          <div class="image-content content2">
             <img src="image/newbornbaby.png" alt="new born baby">
           </div>
     </div>
-  </section>
+  </div>
   
   <section class="care-section">
   <div class="container1">
@@ -81,9 +81,8 @@
    <div class="decorative-circle"></div>
 </section>
 
-<section class="care-section">
-<div class="notcontainer">
-  
+<div class="care-section">
+ 
   <!-- Vision Section -->
   <div class="mission-section">
   <h1>Vision</h1>
@@ -123,9 +122,7 @@
     <img src="image/caregiver.png" alt="Caregiver" class="rounded-image">
     <img src="image/medical.png" alt="Medical Device" class="rounded-image2">
   </div>
-</div>
-</section>
-  
+</div>  
 
 
 
@@ -192,5 +189,23 @@
   
 
   <script src="script.js"></script>
+  <script>
+    //on about page
+const careSectionObserver2 = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting){
+            const items = document.querySelectorAll('.content2');
+            items.forEach((item, index) => {
+                setInterval(() => {
+                    item.classList.add('show');
+                }, index * 100);
+            }); 
+            observer.unobserve(entry.target);
+        }
+    });
+}, {threshold: 0.3});
+
+careSectionObserver2.observe(document.querySelector('.care-section2'));
+  </script>
 </body>
 </html>
