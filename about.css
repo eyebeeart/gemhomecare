@@ -950,12 +950,22 @@ body {
       height: 100vh;
       backdrop-filter: blur(30px);
       -webkit-backdrop-filter: blur(20px);
-      transform: translateX(250px);
-      transition: transform 0.5s ease-out;
+      transition: transform 0.5s ease-out, opacity 0.3s ease-out;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(100%);
     }
   
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden; /* 💡 This is the key */
+    }
+
     nav .nav-menu.show {
-      transform: translateX(0px);
+      transform: translateX(0);
+      opacity: 1;
+      pointer-events: auto;
     }
 
     .nav-menu li {
