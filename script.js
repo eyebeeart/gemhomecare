@@ -52,6 +52,20 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     })
 });
 
+document.addEventListener('scroll', () => {
+    if (navLinks.classList.contains('show')){
+        navLinks.classList.toggle('show');
+    
+        closed.style.display = "none";
+        closed.style.transform = "scale(0)";
+        closed.style.transition = "all 0.3s ease"
+        setTimeout(()=>{
+            toggle.style.display = "block";
+            toggle.style.transform = "scale(1)"
+        },300);
+    }
+})
+
 
 
 
