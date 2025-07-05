@@ -1,10 +1,52 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* styles.css */
 body {
   margin: 0;
   font-family: 'poppins', sans-serif;
   background-color: #eeeded;
   font-size: 16px;
+}
 
+/* Preloader */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease, visibility 0.5s;
+}
+
+.spinner {
+  width: 80px;
+  height: 80px;
+  border: 2px dotted #edf7af;
+  border-top: 6px dotted #8ca005;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Fade out when hidden */
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 
@@ -32,18 +74,21 @@ body {
   height: 20px;
 }
 
-.navbar {
+
+  
+  .navbar {
+    width: 100%;
     height: 115px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px 0px 38%;
-  background-color: #fff;
-  top: 0;
-  position: sticky;
-  z-index: 99999;
-  transition: all 0.2s ease-out;
-}
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px 10px 38%;
+    background-color: #fff;
+    top: 0;
+    position: sticky;
+    z-index: 99999;
+    transition: all 0.2s ease-out;
+  }
 
 .navbar.blur {
   background-color: #00000060;
@@ -110,7 +155,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 80px 0px 50px 50px;
+  padding: 64px 128px;
   margin: 0 auto; /* Center section horizontally */
   background-color: #eeeded;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
@@ -166,9 +211,9 @@ hr {
 
 /* Image Content */
 .image-content img{
-  width: 70%; /* Set image size */
-  height: 70%; /* Ensure it's a square */
-  object-fit:cover;/* Crop image if needed */
+  width: 500px; /* Set image size */
+  height: 500px; /* Ensure it's a square */
+  object-fit: cover;/* Crop image if needed */
   border-radius: 50%; /* Makes the image circular */
   border: 60px solid #dcdcdc; /* Gray border */
 }
@@ -736,7 +781,7 @@ background-color: #b6d32a;
       flex-direction: column;
       background: #00000020;
       position: absolute;
-      top: 83px;
+      top: 73px;
       right: 0;
       width: 200px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);

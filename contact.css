@@ -1,10 +1,9 @@
-/*
-width: 100%;
-height: 888px;
-display: block;
-overflow: hidden;
-position: absolute;
-border-radius: 0px 0px 0px 0px; */
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 
         /* styles.css */
@@ -14,6 +13,46 @@ body {
     background-color: #eeeded;
     width: 100%;
   }
+
+  /* Preloader */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease, visibility 0.5s;
+}
+
+.spinner {
+  width: 80px;
+  height: 80px;
+  border: 2px dotted #edf7af;
+  border-top: 6px dotted #8ca005;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Fade out when hidden */
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
 
   .header {
     background-color: black;
@@ -39,7 +78,8 @@ body {
   }
   
   .navbar {
-      height: 115px;
+    width: 100%;  
+    height: 115px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -611,7 +651,7 @@ body {
         flex-direction: column;
         background: #00000020;
         position: absolute;
-        top: 83px;
+        top: 73px;
         right: 0;
         width: 200px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);

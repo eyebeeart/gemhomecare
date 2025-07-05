@@ -1,3 +1,14 @@
+  // Preloader fade-out
+        window.addEventListener("load", () => {
+          const preloader = document.getElementById("preloader");
+          preloader.classList.add("hidden");
+          navbar.style.display = "flex";
+        });
+
+
+        const navbar = document.getElementById('navbar');
+        navbar.style.display = "none";
+
 const toggle = document.getElementById('menu-toggle');
 const closed = document.getElementById('close-toggle');
 const navLinks = document.getElementById('nav-links');
